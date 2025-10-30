@@ -1,0 +1,59 @@
+# Compiled object files
+*.o
+*.obj
+
+# Executable files
+*.out
+*.exe
+*.elf
+
+# Libraries
+*.a
+*.so
+*.dll
+*.dylib
+
+# Debug / profiling files
+*.gch
+*.pch
+*.gcno
+*.gcda
+*.gcov
+*.prof
+*.dSYM/
+
+# Build directories
+/build/
+/bin/
+/dist/
+/out/
+/target/
+
+# Backup / temp files
+*~
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Logs
+*.log
+
+# IDE / Editor specific
+.vscode/
+.idea/
+*.code-workspace
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Generated files
+lexer_output.txt
+tokens.txt
+test_output.txt
+
+# Ignore compiled test binaries
+tests/*.out
+tests/*.o
+tests/*.exe

@@ -1,0 +1,28 @@
+fn sum(numlist as vector) <int> {
+    result :: int = -5;
+    name :: str = "ali";
+    hello_message :: str = "hello:\t\"ali\"";
+    <% comment %><%ij%>
+    <% nested comment %>
+    <%
+        persons
+        <%
+            fanme
+            <%
+                <%Ali%>
+                <%Amir%>
+            %>
+            lname
+            <%
+                <%Koochaki%>
+                <%Imani%>
+            %>
+        %>
+    %>
+    for (i = 0 to length(numlist))
+    begin
+        result = result + numlist[i];
+    end
+
+    return result;
+}
