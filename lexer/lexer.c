@@ -262,12 +262,63 @@ static void opr_sym(Token *tok)
             unknown_token(*tok, c);
         break;
     case '<':
-        tok->type = LESS_THAN;
-        strcpy(tok->value, "<");
+        if (peek_char() == '=')
+        {
+            next_char();
+            tok->type = LE;
+            strcpy(tok->value, "<=");
+        }
+        else
+        {
+            tok->type = LESS_THAN;
+            strcpy(tok->value, "<");
+        }
         break;
     case '>':
-        tok->type = GREATER_THAN;
-        strcpy(tok->value, ">");
+        if (peek_char() == '=')
+        {
+            next_char();
+            tok->type = GE;
+            strcpy(tok->value, ">=");
+        }
+        else
+        {
+            tok->type = GREATER_THAN;
+            strcpy(tok->value, ">");
+        }
+        break;
+    case '!':
+        if (peek_char() == '=')
+        {
+            next_char();
+            tok->type = NEQ;
+            strcpy(tok->value, "!=");
+        }
+        else
+        {
+            tok->type = NOT;
+            strcpy(tok->value, "!");
+        }
+        break;
+    case '&':
+        if (peek_char() == '&')
+        {
+            next_char();
+            tok->type = AND;
+            strcpy(tok->value, "&&");
+        }
+        else
+            unknown_token(*tok, c);
+        break;
+    case '|':
+        if (peek_char() == '|')
+        {
+            next_char();
+            tok->type = OR;
+            strcpy(tok->value, "||");
+        }
+        else
+            unknown_token(*tok, c);
         break;
     case '(':
         tok->type = LPAREN;
